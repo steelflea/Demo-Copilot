@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1>Todo Page</h1>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/todo">Todo</a>
+    </nav>
+    <ul>
+        <% todos.forEach(function(todo, index) { %>
+            <li><%= todo %> <a href="/todo/<%= index %>" data-method="delete">Delete</a></li>
+        <% }); %>
+    </ul>
+    <form action="/todo" method="post">
+        <input type="text" name="todo" placeholder="New todo">
+        <button type="submit">Add Todo</button>
+    </form>
+</body>
+</html>
